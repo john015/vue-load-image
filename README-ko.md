@@ -82,5 +82,7 @@ Name       | Description
 ## ChangeLog
 
 0.1.0 npm repository 등록
+
 0.1.1 README.md 수정
+
 0.1.2 데모 페이지 추가, 버그 수정

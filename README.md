@@ -84,5 +84,7 @@ Name       | Description
 ## ChangeLog
 
 0.1.0 Publish npm repository
+
 0.1.1 Modify README.md
+
 0.1.2 Add demo page, bug fix
