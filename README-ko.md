@@ -3,6 +3,10 @@
 # vue-load-image
 vue-load-image는 이미지로드 중 이미지 로더를 표시하며 이미지로드에 실패 했을때 대체 내용을 표시하는 3KB Vue component 입니다.
 
+## Demo
+[vue-load-image Demo](https://john015.github.io/vue-load-image/)
+
+
 ## Getting started
 
 `
@@ -65,10 +69,10 @@ data-src 값을 background-image url과 동일하게 설정 해주세요.
 
 ## Events
 
-Name       | Description
------------|----------|------------
-`onError`  | 이미지 로드 실패시 onError가 호출 됩니다.
-`onLoad`   | 이미지가 로드되면 onLoad가 호출 됩니다.
+Name     | Description
+---------|----------|
+`onError`| 이미지 로드 실패시 onError가 호출 됩니다.
+`onLoad` | 이미지가 로드되면 onLoad가 호출 됩니다.
 
 ## Slots
 

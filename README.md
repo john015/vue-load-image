@@ -3,6 +3,9 @@ English | [한국어](./README-ko.md)
 # vue-load-image
 vue-load-image is 3KB minimalist Vue component that display loader during image loading, as well as by display alternate content when the image fails to load.
 
+## Demo
+[vue-load-image Demo](https://john015.github.io/vue-load-image/)
+
 ## Getting started
 
 `
@@ -67,10 +70,10 @@ set data-src to be the same as background-image url
 
 ## Events
 
-Name       | Description
------------|----------|------------
-`onError`  | onError gets triggered when image fails to load.
-`onLoad`   | onLoad gets triggered when image is loaded.
+Name     | Description
+---------|----------|
+`onError`| onError gets triggered when image fails to load.
+`onLoad` | onLoad gets triggered when image is loaded.
 
 ## Slots
 
