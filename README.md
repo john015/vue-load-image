@@ -66,7 +66,7 @@ export default {
 }
 </script>
 ```
-#####Notice
+##### Notice
 
 set data-src to be the same as background-image url
 
