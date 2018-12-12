@@ -1,5 +1,5 @@
 /*!
- * vue-load-image v0.1.1
+ * vue-load-image v0.1.6
  * (c) 2018 Lee Sangwon <john0152@naver.com>
  * Released under the MIT License.
  */

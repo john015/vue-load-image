@@ -10,7 +10,7 @@ module.exports = {
   output: {
     libraryTarget: 'umd',
     path: path.resolve(__dirname, '../dist'),
-    filename: 'vue-imageloader.js'
+    filename: 'vue-load-image.js'
   },
   module: {
     rules: [babel, vue, css]
