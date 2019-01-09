@@ -1,8 +1,17 @@
 <template>
   <div class="vue-load-image">
-    <slot v-if="status === 'loaded'" name="image" />
-    <slot v-else-if="status === 'failed'" name="error" />
-    <slot v-else-if="status === 'loading'" name="preloader" />
+    <slot
+      v-if="status === 'loaded'"
+      name="image"
+    />
+    <slot
+      v-else-if="status === 'failed'"
+      name="error"
+    />
+    <slot
+      v-else-if="status === 'loading'"
+      name="preloader"
+    />
   </div>
 </template>
 
@@ -15,14 +24,14 @@ const Status = {
 }
 
 export default {
-  data () {
+  data() {
     return {
       status: null,
       img: null,
       src: null
     }
   },
-  created () {
+  created() {
     this.src = this.$slots.image[0].data.attrs.src || this.$slots.image[0].data.attrs['data-src']
     if (this.src) {
       this.status = Status.LOADING
@@ -31,8 +40,8 @@ export default {
       this.status = Status.PENDING
     }
   },
-  updated () {
-    const receivedSrc = this.$slots.image[0].data.attrs.src || this.$slots.image[0].data.attrs
+  updated() {
+    const receivedSrc = this.$slots.image[0].data.attrs.src || this.$slots.image[0].data.attrs['data-src']
     if (this.status === Status.LOADING && !this.img) {
       this.createLoader()
     } else if (this.src !== receivedSrc) {
@@ -41,31 +50,31 @@ export default {
     }
   },
   watch: {
-    src (value) {
+    src(value) {
       this.status = value ? Status.LOADING : Status.PENDING
     }
   },
   methods: {
-    createLoader () {
+    createLoader() {
       this.destroyLoader()
       this.img = new Image()
       this.img.onload = this.handleLoad
       this.img.onerror = this.handleError
       this.img.src = this.src
     },
-    destroyLoader () {
+    destroyLoader() {
       if (this.img) {
         this.img.onload = null
         this.img.onerror = null
         this.img = null
       }
     },
-    handleLoad () {
+    handleLoad() {
       this.destroyLoader()
       this.status = Status.LOADED
       this.$emit('onLoad')
     },
-    handleError (error) {
+    handleError(error) {
       this.destroyLoader()
       this.status = Status.FAILED
       this.$emit('onError', error)
