@@ -9,7 +9,7 @@ vue-load-image는 이미지로드 중 이미지 로더를 표시하며 이미지
 [vue-load-image Demo](https://john015.github.io/vue-load-image/)
 
 
-## Getting started
+## Installation
 
 ### NPM
 `

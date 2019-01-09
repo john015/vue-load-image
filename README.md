@@ -8,14 +8,14 @@ Vue-load-image is 3KB minimalist Vue component that display loader during image 
 ## Demo
 [vue-load-image Demo](https://john015.github.io/vue-load-image/)
 
-## Getting started
+## Installation
 
-### NPM
+### Via NPM:
 `
 npm i vue-load-image
 `
 
-### CDN
+### Via CDN:
 ```
 <script src='https://unpkg.com/vue-load-image'></script>
 ```
@@ -87,8 +87,8 @@ Set data-src to be the same as background-image url
 
 ## Slots
 
-"image" slot will be rendered when the image is successfully loaded
+`"image"` slot will be rendered when the image is successfully loaded
 
-"preloader" slot will be rendered when the image is in the process of loading
+`"preloader"` slot will be rendered when the image is in the process of loading
 
-"error" slot will be rendered when the image load fails.
+`"error"` slot will be rendered when the image load fails.
