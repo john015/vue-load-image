@@ -1,6 +1,6 @@
 {
   "name": "vue-load-image",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "A vue component for showing loader during image loading",
   "scripts": {
     "build": "webpack --config config/webpack.prod.config.js --optimize-minimize --hide-modules --mode production"
@@ -36,7 +36,7 @@
     "babel-preset-latest": "^6.24.1",
     "compression-webpack-plugin": "^2.0.0",
     "css-loader": "^1.0.1",
-    "eslint": "^5.9.0",
+    "eslint": "^5.16.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^8.0.0",
