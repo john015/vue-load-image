@@ -1,6 +1,6 @@
 {
   "name": "vue-load-image",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "A vue component for showing loader during image loading",
   "scripts": {
     "build": "webpack --config config/webpack.prod.config.js --optimize-minimize --hide-modules --mode production"
@@ -22,7 +22,7 @@
     "image-preloader"
   ],
   "main": "./dist/vue-load-image.js",
-  "author": "Lee Sangwon <john0152@naver.com>",
+  "author": "Lee Sangwon <lsw0150305@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "vue": "^2.0.0"
@@ -50,7 +50,7 @@
     "vue-loader": "^15.4.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.17",
-    "webpack": "^4.26.0",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.1.2",
     "webpack-merge": "^4.1.4"
   }
