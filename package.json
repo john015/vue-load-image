@@ -22,7 +22,7 @@
     "image-preloader"
   ],
   "main": "./dist/vue-load-image.js",
-  "author": "Lee Sangwon <lsw0150305@gmail.com>",
+  "author": "Sangwon Lee <lsw0150305@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "vue": "^2.0.0"
