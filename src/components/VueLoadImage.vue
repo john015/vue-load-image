@@ -1,27 +1,18 @@
 <template>
   <div class="vue-load-image">
-    <slot
-      v-if="status === 'loaded'"
-      name="image"
-    />
-    <slot
-      v-else-if="status === 'failed'"
-      name="error"
-    />
-    <slot
-      v-else-if="status === 'loading'"
-      name="preloader"
-    />
+    <slot v-if="status === 'loaded'" name="image" />
+    <slot v-else-if="status === 'failed'" name="error" />
+    <slot v-else-if="status === 'loading'" name="preloader" />
   </div>
 </template>
 
 <script>
 const Status = {
-  PENDING: 'pending',
-  LOADING: 'loading',
-  LOADED: 'loaded',
-  FAILED: 'failed'
-}
+  PENDING: "pending",
+  LOADING: "loading",
+  LOADED: "loaded",
+  FAILED: "failed"
+};
 
 export default {
   data() {
@@ -29,56 +20,60 @@ export default {
       status: null,
       img: null,
       src: null
-    }
+    };
   },
   created() {
-    this.src = this.$slots.image[0].data.attrs.src || this.$slots.image[0].data.attrs['data-src']
+    const { attrs } = this.$slots.image[0].data;
+    this.src = attrs.src || attrs["data-src"];
     if (this.src) {
-      this.status = Status.LOADING
-      this.createLoader()
-    } else {
-      this.status = Status.PENDING
+      this.status = Status.LOADING;
+      this.createLoader();
+      return;
     }
+    this.status = Status.PENDING;
   },
   updated() {
-    const receivedSrc = this.$slots.image[0].data.attrs.src || this.$slots.image[0].data.attrs['data-src']
+    const { attrs } = this.$slots.image[0].data;
+    const receivedSrc = attrs.src || attrs["data-src"];
     if (this.status === Status.LOADING && !this.img) {
-      this.createLoader()
-    } else if (this.src !== receivedSrc) {
-      this.src = receivedSrc
-      this.createLoader()
+      this.createLoader();
+      return;
+    }
+    if (this.src !== receivedSrc) {
+      this.src = receivedSrc;
+      this.createLoader();
     }
   },
   watch: {
     src(value) {
-      this.status = value ? Status.LOADING : Status.PENDING
+      this.status = value ? Status.LOADING : Status.PENDING;
     }
   },
   methods: {
     createLoader() {
-      this.destroyLoader()
-      this.img = new Image()
-      this.img.onload = this.handleLoad
-      this.img.onerror = this.handleError
-      this.img.src = this.src
+      this.destroyLoader();
+      this.img = new Image();
+      this.img.onload = this.handleLoad;
+      this.img.onerror = this.handleError;
+      this.img.src = this.src;
     },
     destroyLoader() {
       if (this.img) {
-        this.img.onload = null
-        this.img.onerror = null
-        this.img = null
+        this.img.onload = null;
+        this.img.onerror = null;
+        this.img = null;
       }
     },
     handleLoad() {
-      this.destroyLoader()
-      this.status = Status.LOADED
-      this.$emit('onLoad')
+      this.destroyLoader();
+      this.status = Status.LOADED;
+      this.$emit("onLoad");
     },
     handleError(error) {
-      this.destroyLoader()
-      this.status = Status.FAILED
-      this.$emit('onError', error)
+      this.destroyLoader();
+      this.status = Status.FAILED;
+      this.$emit("onError", error);
     }
   }
-}
+};
 </script>
