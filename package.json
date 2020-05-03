@@ -1,6 +1,6 @@
 {
   "name": "vue-load-image",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "A vue component for showing loader during image loading",
   "scripts": {
     "build": "webpack --config config/webpack.prod.config.js --optimize-minimize --hide-modules --mode production"
