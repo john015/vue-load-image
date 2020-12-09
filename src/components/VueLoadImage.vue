@@ -27,6 +27,7 @@ export default {
     this.src = attrs.src || attrs["data-src"];
     if (this.src) {
       this.status = Status.LOADING;
+      this.crossOrigin = attrs.crossorigin;
       this.createLoader();
       return;
     }
@@ -41,6 +42,7 @@ export default {
     }
     if (this.src !== receivedSrc) {
       this.src = receivedSrc;
+      this.crossOrigin = attrs.crossorigin;
       this.createLoader();
     }
   },
@@ -55,6 +57,7 @@ export default {
       this.img = new Image();
       this.img.onload = this.handleLoad;
       this.img.onerror = this.handleError;
+      this.img.crossOrigin = this.crossOrigin;
       this.img.src = this.src;
     },
     destroyLoader() {
