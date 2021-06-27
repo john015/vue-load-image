@@ -1,9 +1,9 @@
 {
   "name": "vue-load-image",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A vue component for showing loader during image loading",
   "scripts": {
-    "build": "webpack --config config/webpack.config.js --mode production"
+    "build": "vue-cli-service build --target=lib src/index.ts"
   },
   "repository": {
     "type": "git",
@@ -21,35 +21,21 @@
     "image",
     "image-preloader"
   ],
-  "main": "./dist/vue-load-image.js",
+  "main": "./dist/vue-load-image.common.js",
+  "browser": "./dist/vue-load-image.umd.min.js",
   "author": "Sangwon Lee <lsw0150305@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
     "vue": "^3"
   },
   "devDependencies": {
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
+    "@vue/cli-plugin-babel": "^4.5.13",
+    "@vue/cli-plugin-eslint": "^4.5.13",
+    "@vue/cli-service": "^4.5.13",
     "@vue/compiler-sfc": "^3.1.2",
-    "babel-cli": "^6.26.0",
-    "babel-loader": "^8.0.4",
-    "babel-preset-es2015": "^6.24.1",
-    "babel-preset-latest": "^6.24.1",
-    "compression-webpack-plugin": "^2.0.0",
-    "eslint": "^5.16.0",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-node": "^8.0.0",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "eslint-plugin-vue": "^4.7.1",
-    "terser-webpack-plugin": "^1.1.0",
-    "uglifyjs-webpack-plugin": "^2.0.1",
-    "vue": "^3.1.2",
-    "vue-component-template": "^0.0.2",
-    "vue-loader": "^16.2.0",
-    "vue-style-loader": "^4.1.2",
-    "webpack": "^5.40.0",
-    "webpack-cli": "^4.7.2"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.7.2",
+    "eslint-plugin-vue": "^7.12.1",
+    "vue": "^3"
   }
 }
