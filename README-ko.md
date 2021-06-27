@@ -8,23 +8,35 @@ vue-load-image 는 이미지로드 중 이미지 로더를 표시하며 이미�
 
 ## Demo
 
-[vue-load-image Demo](https://john015.github.io/vue-load-image/)
+[vue-load-image Demo](https://john015.github.io/vue-load-image/) / [(Source Code)](https://github.com/john015/vue-load-image/tree/master/example) 
 
 ## Installation
 
-### NPM
+### Via NPM:
 
-`npm i vue-load-image`
+```bash
+# for Vue 2.x
+npm i vue-load-image 
 
-### CDN
-
+# for Vue 3.x
+npm i vue-load-image@next
 ```
+
+### Via CDN:
+
+```html
+<!-- for Vue 2.x -->
 <script src='https://unpkg.com/vue-load-image'></script>
+
+<!-- for Vue 3.x -->
+<script src='https://unpkg.com/vue-load-image@next'></script>
 ```
 
 ## Usage
 
-### img
+### Image
+
+#### Vue 2.x
 
 ```js
 <template>
@@ -38,10 +50,7 @@ vue-load-image 는 이미지로드 중 이미지 로더를 표시하며 이미�
 </template>
 
 <script>
-// es6
 import VueLoadImage from 'vue-load-image'
-// es5
-var VueLoadImage = require('vue-load-image').default
 
 export default {
   components: {
@@ -51,7 +60,37 @@ export default {
 </script>
 ```
 
-### background-image
+#### Vue 3.x
+
+```js
+<template>
+  <div>
+    <vue-load-image>
+      <template v-slot:image>
+        <img src="./image.png"/>
+      </template>
+      <template v-slot:preloader> 
+        <img src="./image-loader.gif" />
+      </template>
+      <template v-slot:error>Image load fails</template>
+    </vue-load-image>
+  </div>
+</template>
+
+<script>
+import VueLoadImage from 'vue-load-image'
+
+export default {
+  components: {
+    'vue-load-image': VueLoadImage
+  }
+}
+</script>
+```
+
+### Background-image
+
+#### Vue 2.x
 
 ```js
 <template>
@@ -65,10 +104,7 @@ export default {
 </template>
 
 <script>
-// es6
 import VueLoadImage from 'vue-load-image'
-// es5
-var VueLoadImage = require('vue-load-image').default
 
 export default {
   components: {
@@ -77,6 +113,36 @@ export default {
 }
 </script>
 ```
+
+#### Vue 3.x
+
+```js
+<template>
+  <div>
+    <vue-load-image>
+      <template v-slot:image>
+        <div style="background-image: url(./image.png)" data-src='./image.png' />
+      </template>
+      <template v-slot:preloader> 
+        <img src="./image-loader.gif" />
+      </template>
+      <template v-slot:error>Image load fails</template>
+    </vue-load-image>
+  </div>
+</template>
+
+<script>
+import VueLoadImage from 'vue-load-image'
+
+export default {
+  components: {
+    'vue-load-image': VueLoadImage
+  }
+}
+</script>
+```
+
+#### ⚠️유의사항
 
 data-src 값을 background-image url 과 동일하게 설정 해주세요.
 
